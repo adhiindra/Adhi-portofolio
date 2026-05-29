@@ -9,7 +9,7 @@ const experiences = [
     role: "Software Developer",
     company: "Plotigo",
     period: "Apr 2025 — Present",
-    location: "Singapore",
+    location: "Remote - Singapore",
     description:
       "Developing web applications and software solutions in Singapore.",
   },
@@ -18,7 +18,7 @@ const experiences = [
     role: "Software Developer",
     company: "CodeBros",
     period: "Apr 2025 — Present",
-    location: "Remote",
+    location: "Remote - Bali",
     description:
       "Collaborating on software development projects and providing engineering solutions.",
   },
@@ -47,7 +47,7 @@ export default function Experience() {
     <section
       ref={sectionRef}
       id="experience"
-      className="relative py-32 md:py-48 px-6 md:px-12 lg:px-24"
+      className="relative pb-12 md:pb-16 px-6 md:px-12 lg:px-24 overflow-hidden"
     >
       {/* Section heading with parallax */}
       <div className="max-w-7xl mx-auto">
@@ -152,12 +152,12 @@ function ExperienceCard({
         </p>
 
         {/* Hover arrow */}
-        <motion.div
+        {/* <motion.div
           className="absolute top-6 right-6 md:top-10 md:right-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           whileHover={{ rotate: 45 }}
         >
           <span className="text-accent text-xl">↗</span>
-        </motion.div>
+        </motion.div> */}
       </div>
     </motion.div>
   );

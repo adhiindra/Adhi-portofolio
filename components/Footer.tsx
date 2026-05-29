@@ -49,7 +49,7 @@ export default function Footer() {
     <footer
       ref={sectionRef}
       id="contact"
-      className="relative pt-32 md:pt-48 pb-12 md:pb-16 px-6 md:px-12 lg:px-24 overflow-hidden"
+      className="relative pb-12 md:pb-16 px-6 md:px-12 lg:px-24 overflow-hidden"
     >
       {/* Background gradient orbs with parallax */}
       <motion.div
@@ -140,7 +140,7 @@ export default function Footer() {
                     ↗
                   </span>
                 </div>
-                <span className="border-b border-transparent group-hover:border-accent transition-colors duration-500 font-mono">
+                <span className="text-sm md:text-lg border-b border-transparent group-hover:border-accent transition-colors duration-500 font-mono">
                   adhiindrarog@gmail.com
                 </span>
               </a>

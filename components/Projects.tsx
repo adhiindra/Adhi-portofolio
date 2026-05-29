@@ -48,7 +48,7 @@ export default function Projects() {
     <section
       ref={sectionRef}
       id="projects"
-      className="relative py-32 md:py-48 px-6 md:px-12 lg:px-24"
+      className="relative pb-12 md:pb-16 px-6 md:px-12 lg:px-24 overflow-hidden"
     >
       {/* Background accent orb */}
       <motion.div
@@ -109,7 +109,7 @@ function ProjectCard({
 
   const cardScale = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
   const cardOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
-  const bgX = useTransform(scrollYProgress, [0, 1], [-40, 40]);
+  const bgX = useTransform(scrollYProgress, [0, 1], [-30, 0]);
 
   return (
     <motion.div
