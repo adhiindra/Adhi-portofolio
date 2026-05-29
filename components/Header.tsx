@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 md:px-12 md:py-8 mix-blend-difference text-white">
-        <Link href="/" onClick={() => setIsOpen(false)} className="text-xl md:text-2xl font-bold uppercase tracking-widest font-mono hover:text-accent transition-colors">
+        <Link href="/" onClick={() => setIsOpen(false)} className="text-xl text-accent md:text-2xl font-bold uppercase tracking-widest font-mono hover:text-accent transition-colors">
           AI.
         </Link>
         <nav className="hidden md:flex gap-10 text-xs md:text-sm uppercase tracking-widest font-mono">
@@ -18,7 +18,7 @@ export default function Header() {
           <Link href="#projects" className="hover:text-accent transition-colors">02/ Projects</Link>
           <Link href="#contact" className="hover:text-accent transition-colors">03/ Contact</Link>
         </nav>
-        <button 
+        <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden text-sm uppercase tracking-widest font-mono hover:text-accent transition-colors"
         >

@@ -21,6 +21,7 @@ export default function Hero() {
             src="/adhiindra.jpg"
             alt="Adhi Indra"
             fill
+            loading="eager"
             sizes="(max-width: 768px) 192px, 256px"
             className="object-cover"
           />

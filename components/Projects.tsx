@@ -40,7 +40,7 @@ export default function Projects() {
         transition={{ duration: 0.8 }}
       >
         <h3 className="text-sm md:text-base font-mono uppercase tracking-widest text-accent mb-16 border-b border-white/10 pb-4">
-          02 / Selected Works
+          02 / Projects
         </h3>
 
         <div className="flex flex-col border-t border-white/10">
