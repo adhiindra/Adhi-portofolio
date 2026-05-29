@@ -137,7 +137,7 @@ export default function Footer() {
               >
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-accent flex items-center justify-center group-hover:scale-110 transition-transform duration-500 glow-accent shrink-0">
                   <span className="text-black text-lg rotate-45 group-hover:rotate-0 transition-transform duration-500">
-                    ↗
+                    {"\u2197\uFE0E"}
                   </span>
                 </div>
                 <span className="text-sm md:text-lg border-b border-transparent group-hover:border-accent transition-colors duration-500 font-mono">
@@ -193,7 +193,7 @@ export default function Footer() {
                 </span>
                 <div className="mt-auto pt-2">
                   <span className="text-xs font-mono text-accent/0 group-hover:text-accent transition-colors duration-500 inline-flex items-center gap-1">
-                    Visit ↗
+                    Visit {"\u2197\uFE0E"}
                   </span>
                 </div>
               </motion.a>
