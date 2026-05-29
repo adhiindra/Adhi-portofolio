@@ -10,6 +10,16 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-4 md:px-12 overflow-hidden">
+      {/* Ambient Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.5, scale: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] md:w-[40vw] md:h-[40vw] bg-accent/20 rounded-full blur-[100px] md:blur-[150px]"
+        />
+      </div>
+
       <div className="z-10 flex flex-col items-center justify-center w-full">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
