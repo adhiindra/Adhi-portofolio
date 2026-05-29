@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   const lines = [
-    "I Gede", "Adhi Indra", "Jaya"
+    "Adhi Indra"
   ];
 
   return (
@@ -18,7 +18,7 @@ export default function Hero() {
           className="mb-8 overflow-hidden rounded-2xl md:rounded-[2rem] w-48 h-48 md:w-64 md:h-64 border border-white/10 relative shadow-2xl"
         >
           <Image
-            src="/profile.jpeg"
+            src="/adhiindra.jpg"
             alt="Adhi Indra"
             fill
             sizes="(max-width: 768px) 192px, 256px"
@@ -38,6 +38,14 @@ export default function Hero() {
             </motion.h2>
           </div>
         ))}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.33, 1, 0.68, 1] }}
+          className="mt-4 md:mt-6 text-sm md:text-lg lg:text-xl font-mono text-accent uppercase tracking-widest text-center"
+        >
+          ( I Gede Adhi Indra Jaya )
+        </motion.div>
       </div>
       <motion.div
         initial={{ opacity: 0 }}
