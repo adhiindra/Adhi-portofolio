@@ -44,7 +44,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.33, 1, 0.68, 1] }}
           className="mt-4 md:mt-6 text-sm md:text-lg lg:text-xl font-mono text-accent uppercase tracking-widest text-center"
         >
-          ( I Gede Adhi Indra Jaya )
+          ( I Gede Adhi Indra Jaya, S.Kom )
         </motion.div>
       </div>
       <motion.div
