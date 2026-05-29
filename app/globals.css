@@ -1,21 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0d0d0d;
-  --foreground: #f2f2f2;
+  --background: #080808;
+  --foreground: #f0ece4;
   --accent: #c2a77d;
-  --primary: #1a1a1a;
-  --secondary: #242424;
+  --accent-light: #d4be97;
+  --primary: #111111;
+  --secondary: #1a1a1a;
+  --surface: #141414;
+  --muted: rgba(240, 236, 228, 0.4);
+
+  /* Parallax speed multipliers */
+  --parallax-slow: 0.3;
+  --parallax-medium: 0.6;
+  --parallax-fast: 1;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
   --font-sans: var(--font-inter), Arial, Helvetica, sans-serif;
   --font-mono: var(--font-mono), monospace;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -23,15 +39,101 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 
-body::-webkit-scrollbar { 
-  display: none; /* WebKit */
-}
-
+/* Selection */
 ::selection {
   background: var(--accent);
   color: #000;
+}
+
+/* Scrollbar — thin & accent */
+body::-webkit-scrollbar {
+  width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--background);
+}
+
+/* Parallax layer utility */
+.parallax-layer {
+  will-change: transform;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .parallax-layer {
+    will-change: auto;
+    transform: none !important;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Timeline line drawing animation */
+@keyframes draw-line {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* Progressive enhancement — native scroll-driven parallax */
+@supports ((animation-timeline: view()) and (animation-range: entry)) {
+  @keyframes parallax-drift {
+    from {
+      transform: translateY(60px);
+    }
+    to {
+      transform: translateY(-60px);
+    }
+  }
+
+  .css-parallax {
+    animation: parallax-drift linear both;
+    animation-timeline: view();
+  }
+}
+
+/* Glow effect */
+.glow-accent {
+  box-shadow: 0 0 60px 20px rgba(194, 167, 125, 0.15),
+              0 0 120px 60px rgba(194, 167, 125, 0.05);
+}
+
+/* Text gradient */
+.text-gradient {
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
