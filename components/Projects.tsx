@@ -6,21 +6,27 @@ import { ArrowUpRight } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    category: "Fullstack Development",
+    title: "acCEss",
+    category: "Progressive Web App & Kiosk",
     year: "2023",
   },
   {
     id: 2,
-    title: "Financial Dashboard",
-    category: "Frontend Architecture",
-    year: "2023",
+    title: "Woodland Transport Solutions",
+    category: "Web Application",
+    year: "2022",
   },
   {
     id: 3,
-    title: "Portfolio Website",
-    category: "Web Design & Motion",
-    year: "2024",
+    title: "SiPanduBeradat",
+    category: "Security System",
+    year: "2021",
+  },
+  {
+    id: 4,
+    title: "Motorcycle Security",
+    category: "IoT & Android App",
+    year: "2020",
   }
 ];
 

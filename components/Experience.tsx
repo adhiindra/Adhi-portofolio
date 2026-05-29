@@ -5,24 +5,24 @@ import { motion } from "framer-motion";
 const experiences = [
   {
     id: 1,
-    role: "Senior Software Engineer",
-    company: "Tech Innovators Inc.",
-    period: "2023 - Present",
-    description: "Leading frontend architecture and building scalable web applications using Next.js and React."
+    role: "Software Developer",
+    company: "Plotigo",
+    period: "Apr 2025 - Present",
+    description: "Developing web applications and software solutions in Singapore."
   },
   {
     id: 2,
-    role: "Software Engineer",
-    company: "Digital Solutions LLC",
-    period: "2020 - 2023",
-    description: "Developed and maintained full-stack applications, improved performance by 40%, and mentored junior developers."
+    role: "Software Developer",
+    company: "CodeBros",
+    period: "Apr 2025 - Present",
+    description: "Collaborating on software development projects and providing engineering solutions."
   },
   {
     id: 3,
-    role: "Frontend Developer",
-    company: "Creative Agency",
-    period: "2018 - 2020",
-    description: "Crafted pixel-perfect user interfaces and implemented complex animations for high-profile clients."
+    role: "Software Developer",
+    company: "Taksu Tech",
+    period: "Mar 2022 - Mar 2025",
+    description: "Built and maintained software applications during a three-year tenure in Bali, Indonesia."
   }
 ];
 
