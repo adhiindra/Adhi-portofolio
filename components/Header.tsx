@@ -2,14 +2,29 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 md:px-12 md:py-8 mix-blend-difference text-white">
+      <header 
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 transition-all duration-300 ${
+          isScrolled 
+            ? "py-4 bg-background/80 backdrop-blur-md border-b border-white/10 text-foreground" 
+            : "py-6 md:py-8 mix-blend-difference text-white"
+        }`}
+      >
         <Link href="/" onClick={() => setIsOpen(false)} className="text-xl text-accent md:text-2xl font-bold uppercase tracking-widest font-mono hover:text-accent transition-colors">
           AI.
         </Link>
