@@ -12,13 +12,13 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  // Multi-speed parallax layers
-  const bgY = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const midY = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const fgY = useTransform(scrollYProgress, [0, 1], [0, -50]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, 150]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
+  // Multi-speed parallax layers — heavy offsets for dramatic depth
+  const bgY = useTransform(scrollYProgress, [0, 1], [0, 500]);
+  const midY = useTransform(scrollYProgress, [0, 1], [0, 250]);
+  const fgY = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, 350]);
+  const opacity = useTransform(scrollYProgress, [0, 0.4, 1], [1, 0, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
 
   return (
     <section

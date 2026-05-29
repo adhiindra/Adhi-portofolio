@@ -40,7 +40,7 @@ export default function Experience() {
     offset: ["start end", "end start"],
   });
 
-  const headingY = useTransform(scrollYProgress, [0, 1], [60, -60]);
+  const headingY = useTransform(scrollYProgress, [0, 1], [120, -120]);
   const lineHeight = useTransform(scrollYProgress, [0.1, 0.9], ["0%", "100%"]);
 
   return (
@@ -110,7 +110,7 @@ function ExperienceCard({
   const x = useTransform(
     scrollYProgress,
     [0, 1],
-    [index % 2 === 0 ? -60 : 60, 0]
+    [index % 2 === 0 ? -100 : 100, 0]
   );
   const cardOpacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 

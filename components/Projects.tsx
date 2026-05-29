@@ -42,7 +42,7 @@ export default function Projects() {
     offset: ["start end", "end start"],
   });
 
-  const headingY = useTransform(scrollYProgress, [0, 1], [80, -80]);
+  const headingY = useTransform(scrollYProgress, [0, 1], [150, -150]);
 
   return (
     <section
@@ -54,7 +54,7 @@ export default function Projects() {
       <motion.div
         className="absolute top-1/2 right-0 -translate-y-1/2 w-[40vw] h-[40vw] rounded-full pointer-events-none parallax-layer"
         style={{
-          y: useTransform(scrollYProgress, [0, 1], [100, -100]),
+          y: useTransform(scrollYProgress, [0, 1], [200, -200]),
           background:
             "radial-gradient(circle, rgba(194, 167, 125, 0.06) 0%, transparent 60%)",
         }}
@@ -107,9 +107,9 @@ function ProjectCard({
     offset: ["start end", "center center"],
   });
 
-  const cardScale = useTransform(scrollYProgress, [0, 1], [0.92, 1]);
+  const cardScale = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
   const cardOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
-  const bgX = useTransform(scrollYProgress, [0, 1], [-20, 20]);
+  const bgX = useTransform(scrollYProgress, [0, 1], [-40, 40]);
 
   return (
     <motion.div
@@ -134,7 +134,7 @@ function ProjectCard({
           <motion.span
             className="text-xs font-mono text-accent/40 tracking-widest parallax-layer"
             style={{
-              y: useTransform(scrollYProgress, [0, 1], [10, -10]),
+              y: useTransform(scrollYProgress, [0, 1], [20, -20]),
             }}
           >
             {String(index + 1).padStart(2, "0")}

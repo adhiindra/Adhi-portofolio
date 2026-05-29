@@ -33,10 +33,10 @@ export default function Footer() {
     offset: ["start end", "end end"],
   });
 
-  const headingScale = useTransform(scrollYProgress, [0, 0.6], [0.85, 1]);
+  const headingScale = useTransform(scrollYProgress, [0, 0.6], [0.75, 1]);
   const headingOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
-  const orbY = useTransform(scrollYProgress, [0, 1], [120, -60]);
-  const orb2Y = useTransform(scrollYProgress, [0, 1], [80, -40]);
+  const orbY = useTransform(scrollYProgress, [0, 1], [250, -120]);
+  const orb2Y = useTransform(scrollYProgress, [0, 1], [160, -80]);
 
   return (
     <footer

@@ -18,7 +18,7 @@ function ParticleOrb({ particle }: { particle: Particle }) {
   const y = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, -particle.speed * 400]
+    [0, -particle.speed * 800]
   );
 
   return (
