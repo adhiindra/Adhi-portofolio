@@ -12,7 +12,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-4 md:px-12 overflow-hidden">
       {/* Ambient Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.5, scale: 1 }}
           transition={{ duration: 2, ease: "easeOut" }}
@@ -43,7 +43,7 @@ export default function Hero() {
               whileInView={{ y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.1, ease: [0.33, 1, 0.68, 1] }}
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold uppercase tracking-tighter text-foreground whitespace-nowrap text-center leading-[0.9]"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tighter text-foreground whitespace-nowrap text-center leading-[0.9]"
             >
               {line}
             </motion.h2>
