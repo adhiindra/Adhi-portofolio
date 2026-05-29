@@ -17,7 +17,7 @@ export default function Hero() {
   const midY = useTransform(scrollYProgress, [0, 1], [0, 250]);
   const fgY = useTransform(scrollYProgress, [0, 1], [0, -120]);
   const textY = useTransform(scrollYProgress, [0, 1], [0, 350]);
-  const opacity = useTransform(scrollYProgress, [0, 0.4, 1], [1, 0, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
 
   return (
@@ -67,7 +67,7 @@ export default function Hero() {
 
       {/* Middle Layer — profile image */}
       <motion.div
-        className="absolute inset-0 flex items-center justify-center parallax-layer"
+        className="absolute inset-0 flex items-center justify-center parallax-layer mb-[100px]"
         style={{ y: midY, opacity, scale }}
       >
         <div className="flex flex-col items-center z-10">
@@ -139,7 +139,7 @@ export default function Hero() {
 
       {/* Foreground Layer — scroll hint */}
       <motion.div
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 parallax-layer"
+        className="absolute bottom-[22vh] left-1/2 -translate-x-1/2 parallax-layer"
         style={{ y: fgY }}
       >
         <motion.div

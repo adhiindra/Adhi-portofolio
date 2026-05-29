@@ -33,8 +33,15 @@ export default function Footer() {
     offset: ["start end", "end end"],
   });
 
-  const headingScale = useTransform(scrollYProgress, [0, 0.6], [0.75, 1]);
-  const headingOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+  const headingRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: headingProgress } = useScroll({
+    target: headingRef,
+    offset: ["start 90%", "start 40%"],
+  });
+
+  const headingScale = useTransform(headingProgress, [0, 1], [0.75, 1]);
+  const headingOpacity = useTransform(headingProgress, [0, 1], [0, 1]);
+
   const orbY = useTransform(scrollYProgress, [0, 1], [250, -120]);
   const orb2Y = useTransform(scrollYProgress, [0, 1], [160, -80]);
 
@@ -42,7 +49,7 @@ export default function Footer() {
     <footer
       ref={sectionRef}
       id="contact"
-      className="relative py-32 md:py-48 px-6 md:px-12 lg:px-24 overflow-hidden"
+      className="relative pt-32 md:pt-48 pb-12 md:pb-16 px-6 md:px-12 lg:px-24 overflow-hidden"
     >
       {/* Background gradient orbs with parallax */}
       <motion.div
@@ -87,6 +94,7 @@ export default function Footer() {
 
         {/* CTA heading with scale animation */}
         <motion.div
+          ref={headingRef}
           className="mb-16 md:mb-20"
           style={{ scale: headingScale, opacity: headingOpacity }}
         >
