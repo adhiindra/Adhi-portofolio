@@ -4,7 +4,41 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
 
-const projects = [
+type Project = {
+  id: number;
+  title: string;
+  category: string;
+  year: string;
+  color: string;
+  link?: string;
+};
+
+const projects: Project[] = [
+  {
+    id: 5,
+    title: "FlowSyncs",
+    category: "Web Application",
+    year: "2026",
+    link: "https://flowsyncs.vercel.app/",
+    color: "rgba(194, 167, 125, 0.08)",
+  },
+  {
+    id: 6,
+    title: "Plotigo AI",
+    category: "AI Platform",
+    year: "2024",
+    link: "https://plotigo.ai/",
+    color: "rgba(194, 167, 125, 0.10)",
+  },
+  {
+    id: 7,
+    title: "Plotigo Airport Bus",
+    category: "Web Application",
+    year: "2024",
+    link: "https://airportbus.plotigo.app/",
+    color: "rgba(194, 167, 125, 0.09)",
+  },
+
   {
     id: 1,
     title: "acCEss",
@@ -98,10 +132,10 @@ function ProjectCard({
   project,
   index,
 }: {
-  project: (typeof projects)[number];
+  project: Project;
   index: number;
 }) {
-  const cardRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLAnchorElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ["start end", "center center"],
@@ -112,10 +146,13 @@ function ProjectCard({
   const bgX = useTransform(scrollYProgress, [0, 1], [-30, 0]);
 
   return (
-    <motion.div
+    <motion.a
+      href={project.link || "#"}
+      target={project.link ? "_blank" : undefined}
+      rel={project.link ? "noopener noreferrer" : undefined}
       ref={cardRef}
       style={{ scale: cardScale, opacity: cardOpacity }}
-      className="group relative border-b border-white/[0.06] first:border-t"
+      className="group relative border-b border-white/[0.06] first:border-t block cursor-pointer"
     >
       {/* Hover background with parallax shift */}
       <motion.div
@@ -128,7 +165,7 @@ function ProjectCard({
         />
       </motion.div>
 
-      <div className="py-8 md:py-14 px-2 md:px-6 flex flex-col md:flex-row md:items-center justify-between gap-6 cursor-pointer">
+      <div className="py-8 md:py-14 px-2 md:px-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="flex flex-col md:flex-row md:items-baseline gap-3 md:gap-8">
           {/* Index number */}
           <motion.span
@@ -161,6 +198,6 @@ function ProjectCard({
           </div>
         </div>
       </div>
-    </motion.div>
+    </motion.a>
   );
 }
